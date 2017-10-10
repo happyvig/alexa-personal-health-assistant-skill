@@ -1,0 +1,236 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "CreateAppointmentIntent",
+      "samples": [
+        "Schedule an appointment with doctor {DoctorFName} {DoctorLName} on {ApDate} at {ApTime} for {ApDescription}"
+      ],
+      "slots": [
+        {
+          "name": "ApDate",
+          "type": "AMAZON.DATE",
+          "samples": [
+            "on {ApDate}"
+          ]
+        },
+        {
+          "name": "ApDescription",
+          "type": "LIST_OF_DESCRIPTION",
+          "samples": []
+        },
+        {
+          "name": "ApTime",
+          "type": "AMAZON.TIME",
+          "samples": [
+            "at {ApTime}"
+          ]
+        },
+        {
+          "name": "DoctorFName",
+          "type": "AMAZON.GB_FIRST_NAME",
+          "samples": [
+            "{DoctorFName}"
+          ]
+        },
+        {
+          "name": "DoctorLName",
+          "type": "AMAZON.GB_FIRST_NAME",
+          "samples": [
+            "{DoctorLName}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GetMyUpcomingAppointmentIntent",
+      "samples": [
+        "When is my next doctor's appointment ",
+        "When is next doctor's appointment due",
+        "When is my upcoming doctor appointment ",
+        "Check for my next doctor appointment ",
+        "Check for upcoming doctor appointments"
+      ],
+      "slots": []
+    },
+    {
+      "name": "GetTodaysPrescriptionIntent",
+      "samples": [
+        "What medicines should I take {Time} ",
+        "Should I take any medicines {Time}",
+        "What medicines should I be taking {Time}"
+      ],
+      "slots": [
+        {
+          "name": "Time",
+          "type": "LIST_OF_TIME", 
+          "samples": []
+        }
+      ]
+    }
+  ],
+  
+  "types": [
+    {
+      "name": "LIST_OF_DESCRIPTION",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "fever checkup",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "general health checkup",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "vaccination",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "LIST_OF_TIME",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "today",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "now",
+            "synonyms": []
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-CreateAppointmentIntent.IntentSlot-ApDate",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "on which date"
+        },
+        {
+          "type": "PlainText",
+          "value": "when"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-CreateAppointmentIntent.IntentSlot-ApTime",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "at what time ?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-CreateAppointmentIntent.IntentSlot-DoctorFName",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "doctor's first name "
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-CreateAppointmentIntent.IntentSlot-DoctorLName",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "doctor's last name "
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "CreateAppointmentIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "ApDate",
+            "type": "AMAZON.DATE",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-CreateAppointmentIntent.IntentSlot-ApDate"
+            }
+          },
+          {
+            "name": "ApDescription",
+            "type": "LIST_OF_DESCRIPTION",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          },
+          {
+            "name": "ApTime",
+            "type": "AMAZON.TIME",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-CreateAppointmentIntent.IntentSlot-ApTime"
+            }
+          },
+          {
+            "name": "DoctorFName",
+            "type": "AMAZON.GB_FIRST_NAME",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-CreateAppointmentIntent.IntentSlot-DoctorFName"
+            }
+          },
+          {
+            "name": "DoctorLName",
+            "type": "AMAZON.GB_FIRST_NAME",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-CreateAppointmentIntent.IntentSlot-DoctorLName"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

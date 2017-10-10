@@ -1,0 +1,18 @@
+{
+  "name": "lambda_alexa_personal_health_assistant",
+  "version": "1.0.0",
+  "description": "Lambda function for the Alexa skill - Personal Health Assistant",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "VignesH KumaR <kvignsh@gmail.com>",
+  "license": "MIT"
+}

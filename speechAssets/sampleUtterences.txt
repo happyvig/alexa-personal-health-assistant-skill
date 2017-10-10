@@ -1,0 +1,9 @@
+GetMyUpcomingAppointmentIntent When is my next appointment
+GetMyUpcomingAppointmentIntent When is my upcoming appointment
+GetMyUpcomingAppointmentIntent When am I up for next appointment
+
+GetTodaysPrescriptionIntent What medicines should I be taking {Time}
+GetTodaysPrescriptionIntent Should I take any medicines {Time}
+GetTodaysPrescriptionIntent What medicines should I take {Time}
+
+CreateAppointmentIntent Schedule an appointment with doctor {DoctorName} on {ApDate} at {ApTime} for {ApDescription}
