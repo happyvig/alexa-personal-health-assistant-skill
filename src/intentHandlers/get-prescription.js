@@ -22,7 +22,7 @@ function getPrescriptionIntentHandler(intent, session, callback) {
     const shouldEndSession = true;
     let speechOutput = strings.FAILURE_MSG;
     let reprompt = strings.REPROMPT_MSG;
-    const header = 'Prescriptions';
+    const header = 'Your prescriptions';
 
     const endpoint = config["SERVER"]["ENDPOINTS"]["PRESCRIPTION"];
 

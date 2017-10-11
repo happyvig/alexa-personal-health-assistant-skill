@@ -48,7 +48,7 @@ function createAppointmentIntentHandler(intent, session, callback) {
 
             if (_.size(doctorsList) > 0) {
 
-                let progressText = 'Creating your appointment now...<break time=\"1s\"/>';
+                let progressText = "Creating your appointment now...";
                 speechOutput = "";
 
                 let appointmentStartTime = data.date + " " + data.time;
