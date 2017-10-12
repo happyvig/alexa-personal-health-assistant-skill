@@ -18,6 +18,7 @@ const strings = require('strings')(APP_NAME);
 const getAppointmentIntentHandler = require('intentHandlers/get-appointment');
 const getPrescriptionIntentHandler = require('intentHandlers/get-prescription');
 const createAppointmentHandler = require('intentHandlers/create-appointment');
+const getVitalSummaryIntentHandler = require('intentHandlers/get-vitals');
 
 /**
  * Environment related chores
@@ -95,6 +96,10 @@ function onIntent(intentRequest, session, callback) {
 
         case "CreateAppointmentIntent":
             createAppointmentHandler(intent, session, callback);
+            break;
+
+        case "GetVitalSummaryIntent":
+            getVitalSummaryIntentHandler(intent, session, callback);
             break;
 
         case "AMAZON.YesIntent":

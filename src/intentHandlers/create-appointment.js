@@ -11,7 +11,7 @@ const strings = require('strings')(APP_NAME);
 const UTTERANCE_DATE_FORMAT = 'dddd, MMMM Do';
 
 /**
- * Fullfills the intent by creating an appointment with the specified doctor at the specified time
+ * Fulfills the intent by creating an appointment with the specified doctor at the specified time
  *
  * @param  {Object}   intent   Current intent in process
  * @param  {Object}   session  Session object
@@ -74,10 +74,10 @@ function createAppointmentIntentHandler(intent, session, callback) {
                     if (!err) {
                         if (_.size(newAppointment) > 0) {
                             let duration = moment.duration(moment(newAppointment['to']).diff(newAppointment['from'])).hours();
-                            speechOutput = `Your appointment has been successfully created 
-                                                with Dr. ${data.doctor.full} 
-                                                for ${newAppointment['description']} 
-                                                on ${moment(newAppointment['from']).format(UTTERANCE_DATE_FORMAT)} 
+                            speechOutput = `Your appointment has been successfully created \
+                                                with Dr. ${data.doctor.full} \
+                                                for ${newAppointment['description']} \ 
+                                                on ${moment(newAppointment['from']).format(UTTERANCE_DATE_FORMAT)} \ 
                                                 for ${duration} hour !`;
                         }
                     }

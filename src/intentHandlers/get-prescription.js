@@ -9,7 +9,7 @@ const responseBuilder = require('response-builders');
 const strings = require('strings')(APP_NAME);
 
 /**
- * Fullfills the intent by returning all the prescriptions for the day
+ * Fulfills the intent by returning all the prescriptions for the day
  *
  * @param  {Object}   intent   Current intent in process
  * @param  {Object}   session  Session object

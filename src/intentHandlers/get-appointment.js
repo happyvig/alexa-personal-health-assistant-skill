@@ -11,7 +11,7 @@ const strings = require('strings')(APP_NAME);
 const UTTERANCE_DATE_FORMAT = 'dddd, MMMM Do';
 
 /**
- * Fullfils the intent by returning all the upcoming doctor appointments
+ * Fulfils the intent by returning all the upcoming doctor appointments
  *
  * @param  {Object}   intent   Current intent in process
  * @param  {Object}   session  Session object

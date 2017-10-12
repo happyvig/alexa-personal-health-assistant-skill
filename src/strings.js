@@ -5,7 +5,7 @@ function messageStrings(APP_NAME) {
 
     return {
 
-        SKILL_INTRO_MSG: `Welcome to ${APP_NAME}! You can ask me about your medical data like prescriptions, doctor appointments, etc.,`,
+        SKILL_INTRO_MSG: `Hi, I am Jackie, your ${APP_NAME}! You can ask me about your medical data like prescriptions, doctor appointments, etc.,`,
 
         HELP_TEXT: `You can ask me about your medical data like prescriptions, doctor appointments, etc.,`,
 

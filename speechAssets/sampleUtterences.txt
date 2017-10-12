@@ -7,3 +7,6 @@ GetTodaysPrescriptionIntent Should I take any medicines {Time}
 GetTodaysPrescriptionIntent What medicines should I take {Time}
 
 CreateAppointmentIntent Schedule an appointment with doctor {DoctorName} on {ApDate} at {ApTime} for {ApDescription}
+
+GetVitalSummaryIntent How are my vitals looking
+GetVitalSummaryIntent How are my vitals

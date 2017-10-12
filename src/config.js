@@ -18,6 +18,8 @@ module.exports = {
 			"PRESCRIPTION": "prescribed_medicines.json",
 
 			"DOCTORS_LIST": "doctors.json",
+
+			"VITAL_SUMMARY": "user_vital_summary.json"
 		}
 	}
 }
