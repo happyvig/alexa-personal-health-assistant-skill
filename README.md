@@ -21,32 +21,32 @@ As of now, this skill is just built on top of the raw event, triggered from the 
 
 ## Key Terminologies
 
-    * **Intents**: An intent represents an action that fulfills a user’s spoken request. Intents can optionally have arguments called   slots.
-    * **Sample utterances**: A set of likely spoken phrases mapped to the intents. This should include as many representative phrases as possible.
-    * **Custom slot types**: A representative list of possible values for a slot. Custom slot types are used for lists of items that are not covered by one of Amazon’s built-in slot types
+    - **Intents**: An intent represents an action that fulfills a user’s spoken request. Intents can optionally have arguments called   slots.
+    - **Sample utterances**: A set of likely spoken phrases mapped to the intents. This should include as many representative phrases as possible.
+    - **Custom slot types**: A representative list of possible values for a slot. Custom slot types are used for lists of items that are not covered by one of Amazon’s built-in slot types
 
 
 ## Folder Structure
 
-    * speechAssets                         - *speech input related artifacts*
-        * intentSchema.json                - *intents vs slots vs sample utterence mapper*
-        * sampleUtterences.txt             - *input utterence sample texts for each intent*
-    * src                                  - *main source JS files*
-        * intentHandlers                   - *intent handler modules*
-            * create-appointment.js        - *helps creating new doctor appointment*
-            * get-appointment.js           - *helps getting saved appointments*
-            * get-prescription.js          - *helps retrieving daily prescriptions*
-            * get-vitals.js                - *helps getting vital parameter data* 
-        * config.js                        - *project configuration like application id, server endpoints, etc.,*
-        * index.js                         - *main starter file that contains all intent handlers*
-        * package-lock.json                - *auto-generated dependency tree specification for node package install optimizations*
-        * package.json                     - *project description and dependencies*
-        * response-builders.js             - *Alexa response builder helpers*
-        * rest-api.js                      - *http helpers*
-        * strings.js                       - *Alexa output message strings*
-        * utils.js                         - *common helpers*
-    * .gitignore                           - *files to be ignored by Git ex: node_modules*
-    * README.md                            - *project documentation*
+    - speechAssets                         \- *speech input related artifacts*
+      - intentSchema.json                  \- *intents vs slots vs sample utterence mapper*
+      - sampleUtterences.txt               \- *input utterence sample texts for each intent*
+    - src                                  \- *main source JS files*
+      - intentHandlers                     \- *intent handler modules*
+        - create-appointment.js            \- *helps creating new doctor appointment*
+        - get-appointment.js               \- *helps getting saved appointments*
+        - get-prescription.js              \- *helps retrieving daily prescriptions*
+        - get-vitals.js                    \- *helps getting vital parameter data* 
+      - config.js                          \- *project configuration like application id, server endpoints, etc.,*
+      - index.js                           \- *main starter file that contains all intent handlers*
+      - package-lock.json                  \- *auto-generated dependency tree specification for node package install optimizations*
+      - package.json                       \- *project description and dependencies*
+      - response-builders.js               \- *Alexa response builder helpers*
+      - rest-api.js                        \- *http helpers*
+      - strings.js                         \- *Alexa output message strings*
+      - utils.js                           \- *common helpers*
+    - .gitignore                           \- *files to be ignored by Git ex: node_modules*
+    - README.md                            \- *project documentation*
 
  ## Intents & Slots 
         
@@ -58,16 +58,16 @@ As of now, this skill is just built on top of the raw event, triggered from the 
 
  ## Future Enhancements
 
-    * More dialog mode conversations
-    * Port existing functionalities using the standard aws-sdk library
-    * Support for multiple languages
-    * Support for more intents
-    * Handle all possible negative cases gracefully
+    - More dialog mode conversations
+    - Port existing functionalities using the standard aws-sdk library
+    - Support for multiple languages
+    - Support for more intents
+    - Handle all possible negative cases gracefully
 
 ## References
 
-    * [https://github.com/alexa/skill-sample-nodejs-howto](https://github.com/alexa/skill-sample-nodejs-howto)
-    * [https://developer.amazon.com/docs/ask-overviews/build-skills-with-the-alexa-skills-kit.html](https://developer.amazon.com/docs/ask-overviews/build-skills-with-the-alexa-skills-kit.html)
+    - [https://github.com/alexa/skill-sample-nodejs-howto](https://github.com/alexa/skill-sample-nodejs-howto)
+    - [https://developer.amazon.com/docs/ask-overviews/build-skills-with-the-alexa-skills-kit.html](https://developer.amazon.com/docs/ask-overviews/build-skills-with-the-alexa-skills-kit.html)
 
  ## License
 
