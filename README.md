@@ -26,25 +26,25 @@ As of now, this skill is just built on top of the raw event, triggered from the 
 
 
 ## Folder Structure
-- speechAssets                           \- *speech input related artifacts*
-    - intentSchema.json                  \- *intents vs slots vs sample utterence mapper*
-    - sampleUtterences.txt               \- *input utterence sample texts for each intent*
-- src                                    \- *main source JS files*
-    - intentHandlers                     \- *intent handler modules*
-    - create-appointment.js              \- *helps creating new doctor appointment*
-    - get-appointment.js                 \- *helps getting saved appointments*
-    - get-prescription.js                \- *helps retrieving daily prescriptions*
-    - get-vitals.js                      \- *helps getting vital parameter data* 
-    - config.js                          \- *project configuration like application id, server endpoints, etc.,*
-    - index.js                           \- *main starter file that contains all intent handlers*
-    - package-lock.json                  \- *auto-generated dependency tree specification for node package install optimizations*
-    - package.json                       \- *project description and dependencies*
-    - response-builders.js               \- *Alexa response builder helpers*
-    - rest-api.js                        \- *http helpers*
-    - strings.js                         \- *Alexa output message strings*
-    - utils.js                           \- *common helpers*
-- .gitignore                             \- *files to be ignored by Git ex: node_modules*
-- README.md                              \- *project documentation*
+- speechAssets                           (*speech input related artifacts*)
+    - intentSchema.json                  (*intents vs slots vs sample utterence mapper*)
+    - sampleUtterences.txt               (*input utterence sample texts for each intent*)
+- src                                    (*main source JS files*)
+    - intentHandlers                     (*intent handler modules*)
+      - create-appointment.js              (*helps creating new doctor appointment*)
+      - get-appointment.js                 (*helps getting saved appointments*)
+      - get-prescription.js                (*helps retrieving daily prescriptions*)
+      - get-vitals.js                      (*helps getting vital parameter data*) 
+    - config.js                          (*project configuration like application id, server endpoints, etc.,*)
+    - index.js                           (*main starter file that contains all intent handlers*)
+    - package-lock.json                  (*auto-generated dependency tree specification for node package install optimizations*)
+    - package.json                       (*project description and dependencies*)
+    - response-builders.js               (*Alexa response builder helpers*)
+    - rest-api.js                        (*http helpers*)
+    - strings.js                         (*Alexa output message strings*)
+    - utils.js                           (*common helpers*)
+- .gitignore                             (*files to be ignored by Git ex: node_modules*)
+- README.md                              (*project documentation*)
 
  ## Intents & Slots 
 (doc in progress)
