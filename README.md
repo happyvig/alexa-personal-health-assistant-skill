@@ -20,10 +20,11 @@ As of now, this skill is just built on top of the raw event, triggered from the 
 
 
 ## Key Terminologies
-- **Intents**: An intent represents an action that fulfills a user’s spoken request. Intents can optionally have arguments called   slots.
-- **Sample utterances**: A set of likely spoken phrases mapped to the intents. This should include as many representative phrases as possible.
-- **Custom slot types**: A representative list of possible values for a slot. Custom slot types are used for lists of items that are not covered by one of Amazon’s built-in slot types
-
+|     |     |
+| --- | --- |
+| **Intents** | An intent represents an action that fulfills a user’s spoken request. Intents can optionally have arguments called   slots. |
+| **Sample utterances** | A set of likely spoken phrases mapped to the intents. This should include as many representative phrases as possible. |
+| **Custom slot types** | A representative list of possible values for a slot. Custom slot types are used for lists of items that are not covered by one of Amazon’s built-in slot types |
 
 ## Folder Structure
 - speechAssets                           (*speech input related artifacts*)
@@ -31,10 +32,10 @@ As of now, this skill is just built on top of the raw event, triggered from the 
     - sampleUtterences.txt               (*input utterence sample texts for each intent*)
 - src                                    (*main source JS files*)
     - intentHandlers                     (*intent handler modules*)
-      - create-appointment.js              (*helps creating new doctor appointment*)
-      - get-appointment.js                 (*helps getting saved appointments*)
-      - get-prescription.js                (*helps retrieving daily prescriptions*)
-      - get-vitals.js                      (*helps getting vital parameter data*) 
+      - create-appointment.js            (*helps creating new doctor appointment*)
+      - get-appointment.js               (*helps getting saved appointments*)
+      - get-prescription.js              (*helps retrieving daily prescriptions*)
+      - get-vitals.js                    (*helps getting vital parameter data*) 
     - config.js                          (*project configuration like application id, server endpoints, etc.,*)
     - index.js                           (*main starter file that contains all intent handlers*)
     - package-lock.json                  (*auto-generated dependency tree specification for node package install optimizations*)
