@@ -50,35 +50,104 @@ As of now, this skill is just built on top of the raw event, triggered from the 
 | /.gitignore                                   |  *files to be ignored by Git ex: node_modules*                             |
 | /README.md                                    |  *project documentation*                                                   |
 
- ## Intents & Slots 
-Supported intents : 
+## Starting The Skill
+
+This custom skill can be invoked by saying, (jackie is the invocation name for this skill)
+> *Alexa, start Jackie.*
+
+Alexa would reply saying,
+> *Hi, I am Jackie, your Personal Health Assistant! You can ask me about your medical data like prescriptions, doctor appointments, etc.,*
+
+## Supported Intents 
+Simply put, an intent is a particular action to be carried out by Alexa based on our query.
+
 - **CreateAppointmentIntent**: Helps creating an appointment with your doctor. 
     
-    Sample utterance: *Schedule an appointment with doctor Charlie Harris on next Sunday at 5PM for diabetes regular checkup.*
+    You can say,
+    > *Schedule an appointment with doctor Charlie Harris on next Sunday at 5PM for diabetes regular checkup.*
     
-    Alexa output: *Creating appointment now. Your appointment has been successfully created with Dr. Charlie Harris for diabetes regular checkup on Sunday, Oct 28 for 1 hour !*
+    Alexa replies, 
+    > *Creating appointment now. Your appointment has been successfully created with Dr. Charlie Harris for diabetes regular checkup on Sunday, Oct 28 for 1 hour !*
 
 - **GetAppointmentIntent**: Helps getting to know your booked appointments with your doctor.
 
-    Sample utterance: *When is my next appointment ?*
+    You can ask, 
+    > *When is my next appointment ?*
     
-    Alexa output: *You have 2 upcoming appointment. First is with Dr. Charlie Harris for diabetes regular checkup on Sunday, Oct 28 for 1 hour. Last is with Dr. Walter Bishop for precognotion checkup on Sunday, Feb 4 for 1 hour.*
+    Alexa answers, 
+    > *You have 1 upcoming appointment. It is with Dr. Charlie Harris for diabetes regular checkup on Sunday, Oct 28 for 1 hour.*
 
 - **GetPrescriptionIntent** : Helps to know about your day's prescription.
 
-    Sample utterances: 
-    - *What medicines should I be taking now ?*
-    - *What medicines should I be taking today ?*
+    You can ask,
+    > *What medicines should I be taking now ?*
+    > *What medicines should I be taking today ?*
 
-    Alexa output: *You have 2 medicines prescribed today. First is Precose to be taken after breakfast, after dinner. Last is Glyset to be taken after lunch. *
+    Alexa answers,
+    > *You have 2 medicines prescribed today. First is Precose to be taken after breakfast, after dinner. Last is Glyset to be taken after lunch.*
 
 - **GetVitalsIntent** : Helps to know  how your vitals are doing.
 
-    Sample utterances : *How are my vitals looking ?*
+    You can ask,
+    > *How are my vitals looking ?*
 
-    Alexa output: *Your sugar level is high at around 140/95. Your pressure looks normal. Your temperature is normal. Your pulse looks normal.*
+    Alexa answers,
+    > *Your sugar level is high at around 140/95. Your pressure looks normal. Your temperature is normal. Your pulse looks normal.*
 
- ## Future Enhancements
+
+## Supported Slots
+Each intent can have as many slots are required to get all necessary data to fulfil the intent.
+
+- *CreateAppointmentIntent* would require 5 slots to get fulfilled.
+    ```
+    [ 
+        {
+          "name": "ApDate",
+          "type": "AMAZON.DATE",
+          "samples": [
+            "on {ApDate}"
+          ]
+        },
+        {
+          "name": "ApDescription",
+          "type": "LIST_OF_DESCRIPTION", // custom slot type with possible values like 'general checkup', 'diabetes checkup', 'fever checkup', etc.,
+          "samples": []
+        },
+        {
+          "name": "ApTime",
+          "type": "AMAZON.TIME",
+          "samples": [
+            "at {ApTime}"
+          ]
+        },
+        {
+          "name": "DoctorFName",
+          "type": "AMAZON.GB_FIRST_NAME",
+          "samples": [
+            "{DoctorFName}"
+          ]
+        },
+        {
+          "name": "DoctorLName",
+          "type": "AMAZON.GB_FIRST_NAME",
+          "samples": [
+            "{DoctorLName}"
+          ]
+        } 
+    ]
+    ```
+- *GetAppointmentIntent* would need 1 custom slot to get fulfilled.
+    ```
+    [
+        {
+          "name": "Time",
+          "type": "LIST_OF_TIME", // custom slot type with values like 'now', 'today'
+          "samples": []
+        }
+    ]
+    ```  
+
+## Future Enhancements
 - More dialog mode conversations
 - Port existing functionalities using the standard aws-sdk library
 - Support for multiple languages
