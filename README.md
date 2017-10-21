@@ -21,7 +21,7 @@ As of now, this skill is just built on top of the raw event, triggered from the 
 
 ## Key Terminologies
 | Term  |  Description   |
-| --- | --- |
+| :---: | --- |
 | **Intents** | An intent represents an action that fulfills a user’s spoken request. Intents can optionally have arguments called   slots. |
 | **Sample utterances** | A set of likely spoken phrases mapped to the intents. This should include as many representative phrases as possible. |
 | **Custom slot types** | A representative list of possible values for a slot. Custom slot types are used for lists of items that are not covered by one of Amazon’s built-in slot types |
