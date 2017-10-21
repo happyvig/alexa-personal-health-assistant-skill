@@ -18,6 +18,8 @@ This custom skill helps you keep track of your health by letting you know about 
 
 As of now, this skill is just built on top of the raw event, triggered from the AWS Lambda function by the speech input (to be re-written using AWS-SDK library later).
 
+Skill invocation name : Jackie :)
+
 
 ## Key Terminologies
 | Term  |  Description   |
@@ -50,9 +52,9 @@ As of now, this skill is just built on top of the raw event, triggered from the 
 | /.gitignore                                   |  *files to be ignored by Git ex: node_modules*                             |
 | /README.md                                    |  *project documentation*                                                   |
 
-## Starting The Skill
+## Skill Invocation
 
-This custom skill can be invoked by saying, (jackie is the invocation name for this skill)
+This custom skill can be invoked by saying, [ Jackie is the skill's invocation name :) ]
 > *Alexa, start Jackie.*
 
 Alexa would reply saying,
@@ -64,7 +66,7 @@ Simply put, an intent is a particular action to be carried out by Alexa based on
 - **CreateAppointmentIntent**: Helps creating an appointment with your doctor. 
     
     You can say,
-    > *Schedule an appointment with doctor Charlie Harris on next Sunday at 5PM for diabetes regular checkup.*
+    > *Alexa, ask Jackie to schedule an appointment with doctor Charlie Harris on next Sunday at 5PM for diabetes regular checkup.*
     
     Alexa replies, 
     > *Creating appointment now. Your appointment has been successfully created with Dr. Charlie Harris for diabetes regular checkup on Sunday, Oct 28 for 1 hour !*
@@ -72,7 +74,7 @@ Simply put, an intent is a particular action to be carried out by Alexa based on
 - **GetAppointmentIntent**: Helps getting to know your booked appointments with your doctor.
 
     You can ask, 
-    > *When is my next appointment ?*
+    > *Alexa, ask Jackie when is my next appointment ?*
     
     Alexa answers, 
     > *You have 1 upcoming appointment. It is with Dr. Charlie Harris for diabetes regular checkup on Sunday, Oct 28 for 1 hour.*
@@ -80,8 +82,8 @@ Simply put, an intent is a particular action to be carried out by Alexa based on
 - **GetPrescriptionIntent** : Helps to know about your day's prescription.
 
     You can ask,
-    > *What medicines should I be taking now ?*
-    > *What medicines should I be taking today ?*
+    > *Alexa, ask Jackie what medicines should I be taking now ?*
+    > *Alexa, ask Jackie what medicines should I be taking today ?*
 
     Alexa answers,
     > *You have 2 medicines prescribed today. First is Precose to be taken after breakfast, after dinner. Last is Glyset to be taken after lunch.*
@@ -89,7 +91,7 @@ Simply put, an intent is a particular action to be carried out by Alexa based on
 - **GetVitalsIntent** : Helps to know  how your vitals are doing.
 
     You can ask,
-    > *How are my vitals looking ?*
+    > *Alexa, ask Jackie how are my vitals looking ?*
 
     Alexa answers,
     > *Your sugar level is high at around 140/95. Your pressure looks normal. Your temperature is normal. Your pulse looks normal.*
@@ -147,7 +149,7 @@ Each intent can have as many slots are required to get all necessary data to ful
     ]
     ```  
 
-## Future Enhancements
+## Upcoming Enhancements
 - More dialog mode conversations
 - Port existing functionalities using the standard aws-sdk library
 - Support for multiple languages
