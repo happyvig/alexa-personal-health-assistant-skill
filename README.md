@@ -27,31 +27,56 @@ As of now, this skill is just built on top of the raw event, triggered from the 
 | **Custom slot types** | A representative list of possible values for a slot. Custom slot types are used for lists of items that are not covered by one of Amazon’s built-in slot types |
 
 ## Folder Structure
-- speechAssets                           (*speech input related artifacts*)
-    - intentSchema.json                  (*intents vs slots vs sample utterence mapper*)
-    - sampleUtterences.txt               (*input utterence sample texts for each intent*)
-- src                                    (*main source JS files*)
-    - intentHandlers                     (*intent handler modules*)
-      - create-appointment.js            (*helps creating new doctor appointment*)
-      - get-appointment.js               (*helps getting saved appointments*)
-      - get-prescription.js              (*helps retrieving daily prescriptions*)
-      - get-vitals.js                    (*helps getting vital parameter data*) 
-    - config.js                          (*project configuration like application id, server endpoints, etc.,*)
-    - index.js                           (*main starter file that contains all intent handlers*)
-    - package-lock.json                  (*auto-generated dependency tree specification for node package install optimizations*)
-    - package.json                       (*project description and dependencies*)
-    - response-builders.js               (*Alexa response builder helpers*)
-    - rest-api.js                        (*http helpers*)
-    - strings.js                         (*Alexa output message strings*)
-    - utils.js                           (*common helpers*)
-- .gitignore                             (*files to be ignored by Git ex: node_modules*)
-- README.md                              (*project documentation*)
+
+| File                                          | Description                                                                |
+| --- | --- |
+| /speechAssets                                 |  *speech input related artifacts*                                          |
+| /speechAssets/intentSchema.json               |  *intents vs slots vs sample utterance mapper*                             |
+| /speechAssets/sampleUtterances.txt            |  *input utterance sample texts for each intent*                            |
+| /src                                          |  *main source JS files*                                                    |
+| /src/intentHandlers                           |  *intent handler modules*                                                  |
+| /src/intentHandlers/create-appointment.js     |  *helps creating new doctor appointment*                                   |
+| /src/intentHandlers/get-appointment.js        |  *helps getting saved appointments*                                        |
+| /src/intentHandlers/get-prescription.js       |  *helps retrieving daily prescriptions*                                    |
+| /src/intentHandlers/get-vitals.js             |  *helps getting vital parameter data*                                      |
+| /src/config.js                                |  *project configuration like application id, server endpoints, etc.,*      |
+| /src/index.js                                 |  *main starter file that contains all intent handlers*                     |
+| /src/package-lock.json                        |  *auto-generated dependency tree specification*                            |
+| /src/package.json                             | *project description and dependencies*                                     |
+| /src/response-builders.js                     |  *Alexa response builder helpers*                                          |
+| /src/rest-api.js                              |  *http helpers*                                                            |
+| /src/strings.js                               |  *Alexa output message strings*                                            |
+| /src/utils.js                                 | *common helpers*                                                           |
+| /.gitignore                                   |  *files to be ignored by Git ex: node_modules*                             |
+| /README.md                                    |  *project documentation*                                                   |
 
  ## Intents & Slots 
-(doc in progress)
+Supported intents : 
+- **CreateAppointmentIntent**: Helps creating an appointment with your doctor. 
+    
+    Sample utterance: *Schedule an appointment with doctor Charlie Harris on next Sunday at 5PM for diabetes regular checkup.*
+    
+    Alexa output: *Creating appointment now. Your appointment has been successfully created with Dr. Charlie Harris for diabetes regular checkup on Sunday, Oct 28 for 1 hour !*
 
- ## Tests
-(doc in progress)
+- **GetAppointmentIntent**: Helps getting to know your booked appointments with your doctor.
+
+    Sample utterance: *When is my next appointment ?*
+    
+    Alexa output: *You have 2 upcoming appointment. First is with Dr. Charlie Harris for diabetes regular checkup on Sunday, Oct 28 for 1 hour. Last is with Dr. Walter Bishop for precognotion checkup on Sunday, Feb 4 for 1 hour.*
+
+- **GetPrescriptionIntent** : Helps to know about your day's prescription.
+
+    Sample utterances: 
+    - *What medicines should I be taking now ?*
+    - *What medicines should I be taking today ?*
+
+    Alexa output: *You have 2 medicines prescribed today. First is Precose to be taken after breakfast, after dinner. Last is Glyset to be taken after lunch. *
+
+- **GetVitalsIntent** : Helps to know  how your vitals are doing.
+
+    Sample utterances : *How are my vitals looking ?*
+
+    Alexa output: *Your sugar level is high at around 140/95. Your pressure looks normal. Your temperature is normal. Your pulse looks normal.*
 
  ## Future Enhancements
 - More dialog mode conversations
